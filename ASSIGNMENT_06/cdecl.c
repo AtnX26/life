@@ -114,3 +114,15 @@ deal_with_declarator() {
     }
 
     deal_with_pointers();
+
+    /* process tokens that we stacked while reading to identifier */
+    while (top>=0) {
+	if (stack[top].type == '(' ) {
+	    pop;
+	    gettoken(); /* read past ')' */
+	    deal_with_declarator();
+        } else {
+            printf("%s ",pop.string);
+	}
+    }
+}
