@@ -19,4 +19,27 @@ struct token this;
 #define pop stack[top--]
 #define push(s) stack [++top]=s
 
+enum type_tag classify_string(void)
+/* figure out the identifier type */
+{
+   char *s = this.string;
+   if (!strcmp(s,"const")) {
+   strcpy(s,"read-only");
+   return QUALIFIER;
+   }
+   if (!strcmp(s,"volatile")) return QUALIFIER;
+   if (!strcmp(s,"void")) return TYPE;
+   if (!strcmp(s,"char")) return TYPE;
+   if (!strcmp(s,"signed")) return TYPE;
+   if (!strcmp(s,"unsigned")) return TYPE;
+   if (!strcmp(s,"short")) return TYPE;
+   if (!strcmp(s,"int")) return TYPE;
+   if (!strcmp(s,"long")) return TYPE;
+   if (!strcmp(s,"float")) return TYPE;
+   if (!strcmp(s,"double")) return TYPE;
+   if (!strcmp(s,"struct")) return TYPE;
+   if (!strcmp(s,"union")) return TYPE;
+   if (!strcmp(s,"enum")) return TYPE;
+   return IDENTIFIER;
+}
 
