@@ -75,4 +75,6 @@ read_to_first_identifier() {
    push(this);
    gettoken();
    }
+   printf("%s is ", this.string);
+   gettoken();
 }
