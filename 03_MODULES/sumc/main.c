@@ -2,8 +2,7 @@
 // git will track everything else!
 
 #include <stdio.h>
-
-long cumulative_sum(int N);
+#include "mylib.h"
 
 int main(int argc, char *argv[])
 {
@@ -21,16 +20,4 @@ int main(int argc, char *argv[])
   printf("The sum from 1 to %d is %ld\n", N, result);
 
   return 0;
-}
-
-long cumulative_sum(int N)
-{
-  long accumulator = 0;
-
-  if (N == 1)
-      accumulator = 1;
-  else
-      accumulator = N + cumulative_sum(N-1);
-  
-  return accumulator;
 }
