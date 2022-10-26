@@ -1,0 +1,35 @@
+Script started on 2022-10-26 10:14:46-04:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="120" LINES="30"]
+dxu03@th121-5:~/220/life/ASSIGNMENT_06$ ./a.out 
+int argc;
+argc is int 
+dxu03@th121-5:~/220/life/ASSIGNMENT_06$ ./a.out 
+char *argv[];
+argv is array of pointer to char 
+dxu03@th121-5:~/220/life/ASSIGNMENT_06$ char *arg[K[K[K[K[K[K[K[K[K./a.out 
+char *argv();
+argv is function returning pointer to char 
+dxu03@th121-5:~/220/life/ASSIGNMENT_06$ ./a.out 
+char (*j)[20];
+j is pointer to array 0..19 of char 
+dxu03@th121-5:~/220/life/ASSIGNMENT_06$ ./a.out 
+const int * grape;
+grape is pointer to int read-only 
+dxu03@th121-5:~/220/life/ASSIGNMENT_06$ ./a.out 
+int * const grape;
+grape is read-only pointer to int 
+dxu03@th121-5:~/220/life/ASSIGNMENT_06$ ./a.out 
+const int * const grape;
+grape is read-only pointer to int read-only 
+dxu03@th121-5:~/220/life/ASSIGNMENT_06$ ./a.out 
+char* const *(*next)();
+next is pointer to function returning pointer to read-only pointer to char 
+dxu03@th121-5:~/220/life/ASSIGNMENT_06$ ./a.out 
+char *(*c[10])(int **p);
+c is array 0..9 of pointer to function returning pointer to char 
+dxu03@th121-5:~/220/life/ASSIGNMENT_06$ ./a.out 
+typedef struct Perceptron *Perceptron;
+typedef is 
+dxu03@th121-5:~/220/life/ASSIGNMENT_06$ exit
+exit
+
+Script done on 2022-10-26 10:19:57-04:00 [COMMAND_EXIT_CODE="0"]
