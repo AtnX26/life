@@ -58,4 +58,13 @@ void gettoken(void) /* read next token into "this" */
 	this.type=classify_string();
 	return;
     }
+
+   if (*p=='*') {
+	strcpy(this.string,"pointer to");
+	this.type = '*';
+	return;
+   }
+   this.string[1]= '\0';
+   this.type = *p;
+   return;  
 }
