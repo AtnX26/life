@@ -92,3 +92,8 @@ deal_with_arrays() {
    } 
 }
 
+deal_with_function_args() {
+while (this.type!=')') {
+gettoken();
+ }
+gettoken();
