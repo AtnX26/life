@@ -105,3 +105,12 @@ deal_with_pointers() {
 	printf("%s ", pop.string );
     }
 }
+
+deal_with_declarator() {
+   /* deal with possible array/function following the identifier */
+    switch (this.type) {
+    case '[' : deal_with_arrays(); break;
+    case '(' : deal_with_function_args();
+    }
+
+    deal_with_pointers();
