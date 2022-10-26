@@ -1,0 +1,50 @@
+2d7a668 HEAD@{0}: merge feature/main: Fast-forward
+78a6b6e HEAD@{1}: checkout: moving from feature/main to main
+2d7a668 HEAD@{2}: commit: Finich the function
+9e51d74 HEAD@{3}: commit: Start working on the main function
+78a6b6e HEAD@{4}: checkout: moving from main to feature/main
+78a6b6e HEAD@{5}: merge feature/deal_with_declarator: Fast-forward
+2700ff4 HEAD@{6}: checkout: moving from feature/deal_with_declarator to main
+78a6b6e HEAD@{7}: commit: Implement the whole function
+54b75b2 HEAD@{8}: commit: Establish case switching
+2700ff4 HEAD@{9}: checkout: moving from main to feature/deal_with_declarator
+2700ff4 HEAD@{10}: merge feature/deal_with_pointers: Fast-forward
+221b264 HEAD@{11}: checkout: moving from feature/deal_with_pointers to main
+2700ff4 HEAD@{12}: commit: Fix bugs and complete the function
+da6c43a HEAD@{13}: commit: Add deal_with_pointers
+221b264 HEAD@{14}: checkout: moving from main to feature/deal_with_pointers
+221b264 HEAD@{15}: merge feature/deal_with_function_args: Fast-forward
+3b39879 HEAD@{16}: checkout: moving from feature/deal_with_function_args to main
+221b264 HEAD@{17}: commit: Fix bugs in the function
+e2df923 HEAD@{18}: commit: Try to implement the function
+3b39879 HEAD@{19}: checkout: moving from main to feature/deal_with_function_args
+3b39879 HEAD@{20}: merge feature/deal_with_arrays: Fast-forward
+04a20cd HEAD@{21}: checkout: moving from feature/deal_with_arrays to main
+3b39879 HEAD@{22}: commit: Finish implementing the method
+4d59ffb HEAD@{23}: commit: Add while loop to deal with arrays
+04a20cd HEAD@{24}: checkout: moving from main to feature/deal_with_arrays
+04a20cd HEAD@{25}: merge feature/read_to_first_identifier: Fast-forward
+461b9fd HEAD@{26}: checkout: moving from feature/read_to_first_identifier to main
+04a20cd HEAD@{27}: commit: Finish read_to_first_identifier
+72b544a HEAD@{28}: commit: Write the while loop
+461b9fd HEAD@{29}: checkout: moving from main to feature/read_to_first_identifier
+461b9fd HEAD@{30}: merge feature/gettoken: Fast-forward
+6b853cf HEAD@{31}: checkout: moving from feature/gettoken to main
+461b9fd HEAD@{32}: commit: Finish gettoken
+6696552 HEAD@{33}: commit: Add gettoken and construct loops
+6b853cf HEAD@{34}: checkout: moving from main to feature/gettoken
+6b853cf HEAD@{35}: Branch: renamed refs/heads/master to refs/heads/main
+6b853cf HEAD@{37}: merge feature/classify_string: Fast-forward
+ec1dbc5 HEAD@{38}: Branch: renamed refs/heads/main to refs/heads/master
+ec1dbc5 HEAD@{40}: checkout: moving from feature/classify_string to main
+6b853cf HEAD@{41}: commit: Finish implementing classify_string
+15aaefc HEAD@{42}: commit: Set global variables and methods
+ec1dbc5 HEAD@{43}: checkout: moving from main to feature/classify_string
+ec1dbc5 HEAD@{44}: commit: Add directory ASSIGNMENT_06 and new file
+70f3642 HEAD@{45}: merge feature/cumulative_sum: Merge made by the 'recursive' strategy.
+c4d9366 HEAD@{46}: commit: Edit sumr.c
+abcf017 HEAD@{47}: checkout: moving from feature/cumulative_sum to main
+0e6811e HEAD@{48}: commit: Edit sumr.c
+abcf017 HEAD@{49}: checkout: moving from main to feature/cumulative_sum
+abcf017 HEAD@{50}: commit: a
+825d9dd HEAD@{51}: clone: from git@github.com:AtnX26/life.git
