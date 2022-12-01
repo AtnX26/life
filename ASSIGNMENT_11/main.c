@@ -11,18 +11,18 @@ int main(int argc, char *argv[])
     Data data = new_Data(fname);
     Model model = new_Model(data);
     //initialize_model(model); not needed since the initialize_model function has been deprecated
-    printf("Hello!");
+
     // Training
-      fit_model(model, data);
+    fit_model(model, data);
 
     // Testing
     // TODO
 
     // Scoring
-      run_scoring_engine(model);
+    run_scoring_engine(model);
 
-      free(data);
-      free(model);
+    free(data);
+    free(model);
 
     return 0;
 }

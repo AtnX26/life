@@ -3,12 +3,15 @@
 #include <stdlib.h>
 #include "perceptron.h"
 
+//a structure that contains an inner structure for the shape of the matrix
 struct data {
     struct shp {
         int number_of_examples;
         int number_of_features;
     }shape;
+    //the 2d array pointer for the matrix of inputs (xcoords and ycoords)
     double **inputs;
+    //the vector for targets
     int *targets;
 };
 
@@ -17,6 +20,7 @@ struct model {
     struct shpe {
         int dimensionality;
     }shape;
+    //the vector for weights
     double *weights;
 };
 
@@ -31,24 +35,31 @@ Data new_Data(const char *fname)
         exit(1);
     }
 
-
+    //read numbers of examples by counting the lines in the file
     int numbers = 0;
     int features = 0;
     char c;
-   // for (c = getc(fp); c!= EOF; c = getc(fp))
-//	if (c == '\n')
-  //          numbers = numbers + 1;
-    numbers = 20;
-    data->shape.number_of_examples = 20; //numbers;
+    for (c = getc(fp); c!= EOF; c = getc(fp))
+	{if (c == '\n')
+            numbers = numbers + 1;}
+    data->shape.number_of_examples = numbers;
+    //close and reopen the file to set the pointer fp back to the starting location
+    fclose(fp);
+    fp = fopen(fname, "r");
 
-   // double temp = 0;
-   // while (fscanf(fp,"%lf",&temp) != EOF)
-//	features = features + 1;
-  //  features = (features/numbers); //- numbers;
-    features = 2;
+    //read numbers of features by counting the doubles in the file
+    double temp = 0;
+    while (fscanf(fp,"%lf",&temp) != EOF)
+        features = features + 1;
+    features = (features-numbers)/numbers;
     data->shape.number_of_features = features;
-
-
+    
+    
+    fclose(fp);
+    fp = fopen(fname, "r");
+    
+    
+    //dynamically allocate memory for the Data instance using the shape information
     data->inputs = (double **)malloc(sizeof(double *) * numbers);
     int j;
     for (j = 0; j < numbers; j++){
@@ -57,6 +68,7 @@ Data new_Data(const char *fname)
 
     data->targets = (int *) malloc(numbers * sizeof(int));
 
+    //read data in the file, put everything but the last item of each line into inputs and put the last item of each line into targets
     int i = 0;
     int loc = 0;
     double temp2 = 0;
@@ -81,12 +93,11 @@ Data new_Data(const char *fname)
 }
 
 
+//initialize a model with information from the Data parameter
 Model new_Model(const Data data)
 {
     Model model = (Model) malloc(sizeof(Model));
     int dimensions = data->shape.number_of_features + 1;
-    //int dimensions = 3;
-    printf("%d dimensions /n",dimensions);
     model->weights = (double*) malloc(dimensions * sizeof(double));
     for (int i = 0; i < dimensions; i++)
         model->weights[i] = (double) rand() / RAND_MAX;
@@ -124,12 +135,15 @@ static int predict(Model model, Data data)
 void fit_model(Model model, Data data)
 {
     double hypothesis, target;
+    //allocate memory for a new Data instance that holds data for the current line in the for loop
     Data temp_data = (Data) malloc(sizeof(Data));
     temp_data->inputs = (double **)malloc(sizeof(double *));
     temp_data->inputs[0] = (double *)malloc(sizeof(double) * data->shape.number_of_features);
     temp_data->targets = (int *) malloc(sizeof(int));
     temp_data->shape.number_of_examples = 1;
     temp_data->shape.number_of_features = data->shape.number_of_features;
+
+
     bool misclassified = true;
     while (misclassified) {
        misclassified = false;
@@ -137,6 +151,7 @@ void fit_model(Model model, Data data)
             for (int j = 0; j < data->shape.number_of_features; j++){
                 temp_data->inputs[0][j] = data->inputs[i][j];
                 }
+            temp_data->targets[0] = data->targets[i];
             hypothesis = predict(model, temp_data);
             target = data->targets[i];
             if ((hypothesis > 0 && target > 0) || (hypothesis < 0 && target < 0))
@@ -156,7 +171,8 @@ void run_scoring_engine(Model model)
 
     printf("Enter y: \n");
     scanf("%lf", &y);
-
+    
+    //allocate memory for a new Data instance that holds data for user inputs and is passed to the predict function
     Data score_data = (Data) malloc(sizeof(Data));
     score_data->inputs = (double **)malloc(sizeof(double *));
     score_data->inputs[0] = (double *)malloc(sizeof(double) * 2);
