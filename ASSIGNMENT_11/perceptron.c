@@ -4,30 +4,26 @@
 #include "perceptron.h"
 
 struct data {
-    double **inputs;
-    int *targets;
-    struct shp *shape;
-    
-};
-
-struct shp{
+    struct shp {
         int number_of_examples;
         int number_of_features;
+    }shape;
+    double **inputs;
+    int *targets;
 };
+
 
 struct model {
+    struct shpe {
+        int dimensionality;
+    }shape;
     double *weights;
-    struct shpe *shape;
 };
 
-struct shpe{
-    int dimensionality;
-};
 
 Data new_Data(const char *fname)
 {
     Data data = (Data) malloc(sizeof(Data));
-    data->shape = malloc(sizeof(struct shp));
     FILE *fp;
     
     if ((fp = fopen(fname, "r")) == NULL) {
@@ -43,14 +39,14 @@ Data new_Data(const char *fname)
 //	if (c == '\n')
   //          numbers = numbers + 1;
     numbers = 20;
-    data->shape->number_of_examples = 20; //numbers;
+    data->shape.number_of_examples = 20; //numbers;
 
    // double temp = 0;
    // while (fscanf(fp,"%lf",&temp) != EOF)
 //	features = features + 1;
   //  features = (features/numbers); //- numbers;
     features = 2;
-    data->shape->number_of_features = features;
+    data->shape.number_of_features = features;
 
 
     data->inputs = (double **)malloc(sizeof(double *) * numbers);
@@ -65,11 +61,14 @@ Data new_Data(const char *fname)
     int loc = 0;
     double temp2 = 0;
     while (i<numbers){
-	while (fscanf(fp, "%lf", &temp2) != EOF && loc < features){
-	        data->inputs[i][loc] = temp2;
+	while (loc < features){
+	        fscanf(fp, "%lf",&temp2);
+                data->inputs[i][loc] = temp2;
                 loc = loc + 1;
         }
-        fscanf(fp, "%d", &(data->targets[i]));
+        double a = 0;
+        fscanf(fp, "%lf", &a);
+        data->targets[i] = (int) a;
         i++;
         loc = 0;
         
@@ -77,22 +76,21 @@ Data new_Data(const char *fname)
 
 
     fclose(fp);
-    fprintf(stdout, "load_data: loaded %d examples\n", i);
+    fprintf(stdout, "load_data: loaded %d examples\n", data->shape.number_of_examples);
+    return data;
 }
 
 
 Model new_Model(const Data data)
 {
     Model model = (Model) malloc(sizeof(Model));
-    model->shape = malloc(sizeof(struct shpe));
-    int dimensions = data->shape->number_of_features + 1;
+    int dimensions = data->shape.number_of_features + 1;
     //int dimensions = 3;
     printf("%d dimensions /n",dimensions);
     model->weights = (double*) malloc(dimensions * sizeof(double));
     for (int i = 0; i < dimensions; i++)
         model->weights[i] = (double) rand() / RAND_MAX;
-    model->shape->dimensionality = dimensions;
-    
+    model->shape.dimensionality = dimensions; 
     return model;
 }
 
@@ -101,8 +99,8 @@ static void sgd(Model model, Data data)
 {
     int j = 0;
     model->weights[0] += data->targets[0] * 1;
-    int q = model->shape->dimensionality;
-    for (j = 0; j < data->shape->number_of_features; j++){
+    int q = (model->shape.dimensionality)-1;
+    for (j = 0; j < data->shape.number_of_features; j++){
 
     model->weights[q-j] += (data->targets[0]) * (data->inputs[0][j]);
    
@@ -113,8 +111,9 @@ static int predict(Model model, Data data)
 {
     double hypothesis;
     hypothesis = model->weights[0];
-    int q = model->shape->dimensionality;
-    for (int t = 0; t < data->shape->number_of_features; t++){
+    int q = (model->shape.dimensionality)-1;
+    int t = 0;
+    for (t = 0; t < data->shape.number_of_features; t++){
     
     hypothesis += model->weights[q-t] * data->inputs[0][t];
 
@@ -125,19 +124,17 @@ static int predict(Model model, Data data)
 void fit_model(Model model, Data data)
 {
     double hypothesis, target;
-    
     Data temp_data = (Data) malloc(sizeof(Data));
     temp_data->inputs = (double **)malloc(sizeof(double *));
-    temp_data->inputs[0] = (double *)malloc(sizeof(double) * data->shape->number_of_features);
+    temp_data->inputs[0] = (double *)malloc(sizeof(double) * data->shape.number_of_features);
     temp_data->targets = (int *) malloc(sizeof(int));
-    temp_data->shape->number_of_examples = 1;
-    temp_data->shape->number_of_features = data->shape->number_of_features;
-
+    temp_data->shape.number_of_examples = 1;
+    temp_data->shape.number_of_features = data->shape.number_of_features;
     bool misclassified = true;
     while (misclassified) {
-        misclassified = false;
-        for (int i = 0; i < data->shape->number_of_examples; i++) {
-            for (int j = 0; j < data->shape->number_of_features; j++){
+       misclassified = false;
+       for (int i = 0; i < data->shape.number_of_examples; i++) {
+            for (int j = 0; j < data->shape.number_of_features; j++){
                 temp_data->inputs[0][j] = data->inputs[i][j];
                 }
             hypothesis = predict(model, temp_data);
@@ -164,8 +161,8 @@ void run_scoring_engine(Model model)
     score_data->inputs = (double **)malloc(sizeof(double *));
     score_data->inputs[0] = (double *)malloc(sizeof(double) * 2);
     score_data->targets = (int *)malloc(sizeof(int));
-    score_data->shape->number_of_examples = 1;
-    score_data->shape->number_of_features = 2;
+    score_data->shape.number_of_examples = 1;
+    score_data->shape.number_of_features = 2;
 
     score_data->inputs[0][0] = x;
     score_data->inputs[0][1] = y;
