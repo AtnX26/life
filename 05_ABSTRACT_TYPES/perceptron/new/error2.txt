@@ -1,0 +1,329 @@
+==1349027== Memcheck, a memory error detector
+==1349027== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1349027== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1349027== Command: ./a.out train.dat
+==1349027== 
+==1349027== Invalid write of size 8
+==1349027==    at 0x1094F5: new_Data (perceptron.c:63)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027==  Address 0x4a6a048 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1093FF: new_Data (perceptron.c:30)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x10950B: new_Data (perceptron.c:66)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027==  Address 0x4a6a048 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1093FF: new_Data (perceptron.c:30)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027== 
+==1349027== Invalid write of size 8
+==1349027==    at 0x109533: new_Data (perceptron.c:69)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027==  Address 0x4a6a050 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1093FF: new_Data (perceptron.c:30)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x109561: new_Data (perceptron.c:78)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027==  Address 0x4a6a048 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1093FF: new_Data (perceptron.c:30)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1095AF: new_Data (perceptron.c:83)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027==  Address 0x4a6a050 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1093FF: new_Data (perceptron.c:30)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027== 
+==1349027== Invalid write of size 8
+==1349027==    at 0x109646: new_Model (perceptron.c:101)
+==1349027==    by 0x1092E6: main (main.c:12)
+==1349027==  Address 0x4a72fa8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x10962E: new_Model (perceptron.c:99)
+==1349027==    by 0x1092E6: main (main.c:12)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x109668: new_Model (perceptron.c:103)
+==1349027==    by 0x1092E6: main (main.c:12)
+==1349027==  Address 0x4a72fa8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x10962E: new_Model (perceptron.c:99)
+==1349027==    by 0x1092E6: main (main.c:12)
+==1349027== 
+==1349027== Invalid write of size 8
+==1349027==    at 0x10970A: fit_model (perceptron.c:140)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a73058 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1096F9: fit_model (perceptron.c:139)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027== 
+==1349027== Invalid write of size 8
+==1349027==    at 0x10972A: fit_model (perceptron.c:142)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a73060 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1096F9: fit_model (perceptron.c:139)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x10974A: fit_model (perceptron.c:152)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a6a048 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1093FF: new_Data (perceptron.c:30)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x109758: fit_model (perceptron.c:152)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a73058 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1096F9: fit_model (perceptron.c:139)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x109772: fit_model (perceptron.c:154)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a6a050 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1093FF: new_Data (perceptron.c:30)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x109779: fit_model (perceptron.c:154)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a73060 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1096F9: fit_model (perceptron.c:139)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x10937B: predict (perceptron.c:124)
+==1349027==    by 0x10978E: fit_model (perceptron.c:155)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a72fa8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x10962E: new_Model (perceptron.c:99)
+==1349027==    by 0x1092E6: main (main.c:12)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x10939D: predict (perceptron.c:129)
+==1349027==    by 0x10978E: fit_model (perceptron.c:155)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a73058 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1096F9: fit_model (perceptron.c:139)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x10978F: fit_model (perceptron.c:156)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a6a050 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1093FF: new_Data (perceptron.c:30)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x109319: sgd (perceptron.c:112)
+==1349027==    by 0x1097B1: fit_model (perceptron.c:159)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a72fa8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x10962E: new_Model (perceptron.c:99)
+==1349027==    by 0x1092E6: main (main.c:12)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x10931D: sgd (perceptron.c:112)
+==1349027==    by 0x1097B1: fit_model (perceptron.c:159)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a73060 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1096F9: fit_model (perceptron.c:139)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x10934C: sgd (perceptron.c:116)
+==1349027==    by 0x1097B1: fit_model (perceptron.c:159)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a72fa8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x10962E: new_Model (perceptron.c:99)
+==1349027==    by 0x1092E6: main (main.c:12)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x109350: sgd (perceptron.c:116)
+==1349027==    by 0x1097B1: fit_model (perceptron.c:159)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a73060 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1096F9: fit_model (perceptron.c:139)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x109354: sgd (perceptron.c:116)
+==1349027==    by 0x1097B1: fit_model (perceptron.c:159)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a73058 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1096F9: fit_model (perceptron.c:139)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1096A8: delete_Data (perceptron.c:196)
+==1349027==    by 0x1097E3: fit_model (perceptron.c:163)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a73058 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1096F9: fit_model (perceptron.c:139)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1096B9: delete_Data (perceptron.c:198)
+==1349027==    by 0x1097E3: fit_model (perceptron.c:163)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a73058 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1096F9: fit_model (perceptron.c:139)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1096C2: delete_Data (perceptron.c:199)
+==1349027==    by 0x1097E3: fit_model (perceptron.c:163)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027==  Address 0x4a73060 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1096F9: fit_model (perceptron.c:139)
+==1349027==    by 0x1092F4: main (main.c:16)
+==1349027== 
+==1349027== Invalid write of size 8
+==1349027==    at 0x109874: run_scoring_engine (perceptron.c:178)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027==  Address 0x4a735d8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x109863: run_scoring_engine (perceptron.c:177)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027== 
+==1349027== Invalid write of size 8
+==1349027==    at 0x109890: run_scoring_engine (perceptron.c:180)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027==  Address 0x4a735e0 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x109863: run_scoring_engine (perceptron.c:177)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1098A1: run_scoring_engine (perceptron.c:184)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027==  Address 0x4a735d8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x109863: run_scoring_engine (perceptron.c:177)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1098B2: run_scoring_engine (perceptron.c:185)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027==  Address 0x4a735d8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x109863: run_scoring_engine (perceptron.c:177)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x10937B: predict (perceptron.c:124)
+==1349027==    by 0x1098CE: run_scoring_engine (perceptron.c:186)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027==  Address 0x4a72fa8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x10962E: new_Model (perceptron.c:99)
+==1349027==    by 0x1092E6: main (main.c:12)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x10939D: predict (perceptron.c:129)
+==1349027==    by 0x1098CE: run_scoring_engine (perceptron.c:186)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027==  Address 0x4a735d8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x109863: run_scoring_engine (perceptron.c:177)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1096A8: delete_Data (perceptron.c:196)
+==1349027==    by 0x1098EE: run_scoring_engine (perceptron.c:187)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027==  Address 0x4a735d8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x109863: run_scoring_engine (perceptron.c:177)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1096B9: delete_Data (perceptron.c:198)
+==1349027==    by 0x1098EE: run_scoring_engine (perceptron.c:187)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027==  Address 0x4a735d8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x109863: run_scoring_engine (perceptron.c:177)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1096C2: delete_Data (perceptron.c:199)
+==1349027==    by 0x1098EE: run_scoring_engine (perceptron.c:187)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027==  Address 0x4a735e0 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x109863: run_scoring_engine (perceptron.c:177)
+==1349027==    by 0x1092FC: main (main.c:22)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1096A8: delete_Data (perceptron.c:196)
+==1349027==    by 0x109304: main (main.c:24)
+==1349027==  Address 0x4a6a048 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1093FF: new_Data (perceptron.c:30)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1096B9: delete_Data (perceptron.c:198)
+==1349027==    by 0x109304: main (main.c:24)
+==1349027==  Address 0x4a6a048 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1093FF: new_Data (perceptron.c:30)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x1096C2: delete_Data (perceptron.c:199)
+==1349027==    by 0x109304: main (main.c:24)
+==1349027==  Address 0x4a6a050 is 8 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x1093FF: new_Data (perceptron.c:30)
+==1349027==    by 0x1092DB: main (main.c:11)
+==1349027== 
+==1349027== Invalid read of size 8
+==1349027==    at 0x109913: delete_Model (perceptron.c:205)
+==1349027==    by 0x10930C: main (main.c:25)
+==1349027==  Address 0x4a72fa8 is 0 bytes after a block of size 8 alloc'd
+==1349027==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1349027==    by 0x10962E: new_Model (perceptron.c:99)
+==1349027==    by 0x1092E6: main (main.c:12)
+==1349027== 
+load_data: loaded 20 examples
+Enter x: 
+Enter y: 
+Prediction = 1
+==1349027== 
+==1349027== HEAP SUMMARY:
+==1349027==     in use at exit: 0 bytes in 0 blocks
+==1349027==   total heap usage: 41 allocs, 41 frees, 35,880 bytes allocated
+==1349027== 
+==1349027== All heap blocks were freed -- no leaks are possible
+==1349027== 
+==1349027== For lists of detected and suppressed errors, rerun with: -s
+==1349027== ERROR SUMMARY: 1412 errors from 37 contexts (suppressed: 0 from 0)
