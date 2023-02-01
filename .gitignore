@@ -34,7 +34,7 @@
 *.app
 *.i*86
 
-FINAL.XU/
+#FINAL.XU/
 *.x86_64
 *.hex
 
