@@ -34,7 +34,11 @@
 *.app
 *.i*86
 
+<<<<<<< HEAD
 #FINAL.XU/
+=======
+# FINAL.XU/
+>>>>>>> 8a5d328accc59b7ea50f70d5cf88d63cde760e82
 *.x86_64
 *.hex
 
